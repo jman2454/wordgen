@@ -28,10 +28,8 @@ def fill_matrix(dataset):
 
     for i in range(len(matrix)):
         su = sum(matrix[i])
-        if su != 1:
+        if su - 1:
             matrix[i][len(list(rang))-1] += 1-su
-            if sum(matrix[i]) != 1:
-                matrix[i][len(list(rang))-1] += 1-sum(matrix[i])
 
     return matrix
 
