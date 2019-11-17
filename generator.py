@@ -16,7 +16,7 @@ def generate(matrix, num_strings=10):
 
         nli = firstlet
 
-        while (get_char(nli) != ''):
+        while (len(generated) < 3 or get_char(nli) != '' and len(generated) < 11):
             next_let = np.matmul(np.transpose(matrix), next_let).tolist()
             nli = np.random.choice(list(rang), p=next_let)
             next_let = [0 for i in rang]

@@ -23,4 +23,7 @@ if args.test:
 
 matrix = data_gen.fill_matrix(dataset)
 
-generator.generate(matrix, int(args.num_strings))
+if (args.num_strings):
+    generator.generate(matrix, int(args.num_strings))
+else:
+    generator.generate(matrix)
