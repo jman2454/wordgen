@@ -17,7 +17,7 @@ if (not dataset is None and type(dataset == str)):
         dataset = open(args.dataset, 'r')
         dataset = dataset.read()
 
-if args.test:
+if args.test or not args.dataset:
     dataset = open('wordgen/test.txt', 'r')
     dataset = dataset.read()
 
