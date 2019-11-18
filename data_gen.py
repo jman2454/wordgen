@@ -17,11 +17,11 @@ def fill_matrix(dataset):
 
     dataset = dataset.lower()
 
+    accepted = list("abcdefghijklmnopqrstuvqxyz") + ['\n']
     for i in range(len(dataset)-1):
-        accepted = list("abcdefghijklmnopqrstuvqxyz") + ['\n']
-        if (dataset[i+1:i+2] in accepted and dataset[i:i+1] in accepted):
-            ind1 = get_ord(dataset[i:i+1])
-            ind2 = get_ord(dataset[i+1:i+2])
+        if (dataset[i+1] in accepted and dataset[i] in accepted):
+            ind1 = get_ord(dataset[i])
+            ind2 = get_ord(dataset[i+1])
             matrix[ind1][ind2] += 1
 
     matrix = preprocessing.normalize(matrix, norm='l1')
